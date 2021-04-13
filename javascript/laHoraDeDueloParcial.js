@@ -55,7 +55,7 @@ const incrementarRes = new Efecto(
 incrementarRes.aplicar(yellowBelt); // se incrementará su res
 // incrementarRes.aplicar(1) // saldrá un error
 
-redBelt.atacar(yellowBelt); // redBelt ataca a yellowBelt, y se dismiñuye la res de yellowBelt
+redBelt.atacar(yellowBelt); // redBelt ataca a yellowBelt, y se disminuye la res de yellowBelt
 // redBelt.atacar(1) // saldrá un error
 
 console.table({ redBelt, yellowBelt }); // ver cómo están
