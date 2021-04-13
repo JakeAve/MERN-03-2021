@@ -1,0 +1,18 @@
+.person-card {
+    width: 25%;
+    min-width: 500px;
+    margin: auto;
+}
+
+.event-form {
+    display: grid;
+    gap: 1.2rem;
+    padding: 2rem;
+    border: 1px solid black;
+    width: fit-content;
+    margin: auto;
+  }
+
+  .event-form input, .event-form button {
+      font-size: 1.2rem;
+  }
