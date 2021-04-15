@@ -2,7 +2,8 @@
   --spacing: 24px;
 }
 
-#root * {
+.app,
+.app * {
   border: 3px solid black;
 }
 
@@ -11,8 +12,8 @@
   display: grid;
   grid-template: 125px auto / repeat(4, 1fr);
   grid-template-areas:
-  'header header header header'
-  'nav main main main';
+    "header header header header"
+    "nav main main main";
   gap: var(--spacing);
   padding: var(--spacing);
   margin: var(--spacing);
@@ -67,4 +68,23 @@ header {
   justify-content: center;
   align-items: center;
   gap: var(--spacing);
+}
+
+.averiguar-contraseñas {
+  display: grid;
+  margin: auto;
+  width: 50%;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.averiguar-contraseñas input, .averiguar-contraseñas button {
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.averiguar-contraseñas span {
+  color: red;
+  font-size: 1rem;
+  height: 1.5rem;
 }
