@@ -1,0 +1,53 @@
+:root {
+    --spacing: 24px;
+  }
+  
+  #root * {
+    border: 3px solid black;
+  }
+  
+  .app {
+    background-color: #dddddd;;
+    display: grid;
+    grid-template: 125px auto / repeat(4, 1fr);
+    grid-template-areas: 
+    'header header header header'
+    'nav main main main';
+    gap: var(--spacing);
+    padding: var(--spacing);
+    margin: var(--spacing);
+  
+    /* trampas */
+    height: 95vh;
+    box-sizing: border-box;
+  }
+  
+  header {
+    background-color: #6aa84f;
+    grid-area: header;
+  }
+  
+  nav {
+    background-color: #6fa8dc;
+    grid-area: nav;
+    align-self: flex-start;
+    height: 400px;
+  }
+  
+  main {
+    background-color: #e06666;
+    grid-area: main;
+    display: grid;
+    grid-template: auto 90px / repeat(3, 1fr);
+    gap: var(--spacing);
+    padding: var(--spacing);
+  }
+  
+  .subcontent {
+    background-color: #ffd966;
+  }
+  
+  .advertisement {
+    background-color: #b4a7d6;
+    grid-column: 1 / 4;
+  }
