@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 
 const Subcontent = (props) => {
+  /* Elevacion */
   const {
     textoDesdeArriba: { texto, setTexto },
   } = props;

@@ -1,0 +1,33 @@
+.login-form {
+  display: grid;
+  gap: 1rem;
+  font-size: 1.2rem;
+  max-width: 300px;
+  margin: auto;
+}
+
+[data-error-de] {
+    color: red;
+    height: 1.2rem;
+}
+
+.container {
+    height: 500px;
+}
+
+.form-test {
+    display: grid;
+    gap: 1;
+    max-width: 500px;
+    margin: auto;
+}
+
+.form-test > div {
+    display: grid;
+    gap: 1;
+}
+
+.form-test input {
+    width: 100%;
+    font-size: 1.1rem;
+}
