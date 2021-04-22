@@ -1,0 +1,40 @@
+.formulario-de-color {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto;
+}
+
+.formulario-de-color label,
+.formulario-de-color input {
+    font-size: 1.4rem;
+    border: none;
+}
+
+.formulario-de-color input {
+    font-size: 1.4rem;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+}
+
+.formulario-de-color input[type='text'] {
+    background: rgb(235, 235, 235);
+}
+.formulario-de-color input[type='submit'] {
+    background: white;
+    border: 1px solid black;
+}
+
+.padre-de-cajas {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 16px;
+    width: 50%;
+    margin: 1rem auto;
+}
+
+.caja {
+    height: 42px;
+    width: 42px;
+}

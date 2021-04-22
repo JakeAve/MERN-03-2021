@@ -1,0 +1,39 @@
+.tab-section {
+    border: 2px solid grey;
+    border-radius: 8px;
+    margin: 5rem auto;
+    max-width: 500px;
+    height: 300px;
+}
+
+.etiqueta {
+    font-size: 1.2rem;
+    background-color: white;
+    padding: .5rem 1rem;
+    border: none;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.etiqueta.selected {
+    background-color: black;
+    color: white;
+}
+
+.contenido {
+    padding: 1rem;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: slidein 1s;
+}
+
+@keyframes slidein {
+    0% {
+        transform: translateX(300px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
