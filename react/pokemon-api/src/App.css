@@ -1,0 +1,23 @@
+.pokemon-section {
+    max-width: 500px;
+    margin: 2rem auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.pokemon-section h1 {
+    text-align: center;
+}
+
+.pokemon-section button {
+    background: grey;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+}
+
+.pokemon-section li {
+    font-size: 1.2rem;
+}

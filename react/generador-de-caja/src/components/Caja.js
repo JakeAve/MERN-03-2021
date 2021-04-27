@@ -1,8 +1,15 @@
 import React from 'react';
+import { useUser } from '../providers/UserProvider';
 
 const Caja = (props) => {
     const { color, tamaño } = props;
     const pixelados = tamaño + 'px';
+    
+    const user = useUser();
+    const { cambiarUsuario } = user;
+    cambiarUsuario('Miguel');
+    console.log({ user });
+
     return (
         <div
             className="caja"
@@ -11,7 +18,9 @@ const Caja = (props) => {
                 height: pixelados,
                 width: pixelados,
             }}
-        ></div>
+        >
+            {user.firstName}
+        </div>
     );
 };
 

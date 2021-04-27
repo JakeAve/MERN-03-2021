@@ -3,6 +3,7 @@ import './App.css';
 import FormularioDeColor from './components/FormularioDeColor';
 import PadreDeCajas from './components/PadreDeCajas';
 import Caja from './components/Caja';
+import { UserProvider } from './providers/UserProvider';
 
 function App() {
     const [colores, setColores] = useState([]);
@@ -19,8 +20,10 @@ function App() {
 
     return (
         <>
-            <FormularioDeColor añadirPropDeNuevaCaja={setPropDeNuevaCaja} />
-            <PadreDeCajas>{cajas}</PadreDeCajas>
+            <UserProvider>
+                <FormularioDeColor añadirPropDeNuevaCaja={setPropDeNuevaCaja} />
+                <PadreDeCajas>{cajas}</PadreDeCajas>
+            </UserProvider>
         </>
     );
 }
