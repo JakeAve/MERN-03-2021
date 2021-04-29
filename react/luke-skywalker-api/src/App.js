@@ -28,6 +28,7 @@ function App() {
             const arr = await fetchItem(url);
             const [[, titulo]] = arr;
             setResultProps({ titulo, estadisticas: arr.slice(1) });
+            setIsFound(true);
         } catch {
             setIsFound(false);
         }
