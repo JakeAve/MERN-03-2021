@@ -1,0 +1,9 @@
+GET https://pokeapi.co/api/v2/pokemon/ditto
+Content-Type: application/json
+
+###
+
+GET https://www.google.com
+
+###
+

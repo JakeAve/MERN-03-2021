@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import fetchAxios from '../actions/fetchAxios';
+import fetchAxios from '../actions/fetchExtremo';
 
 const PokemonAxios = () => {
     const [items, setItems] = useState([]);

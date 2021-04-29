@@ -1,0 +1,17 @@
+GET https://swapi.dev/api/
+
+###
+
+GET http://swapi.dev/api/species/1
+
+###
+
+GET http://swapi.dev/api/people/1
+
+###
+
+GET http://swapi.dev/api/planets/1
+
+###
+
+GET http://swapi.dev/api/films/1

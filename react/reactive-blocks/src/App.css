@@ -1,0 +1,43 @@
+header {
+    width: 100%;
+    background-color: green;
+    border: 3px solid black;
+    height: 100px;
+}
+
+nav {
+    background-color: dodgerblue;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav a {
+    color: black;
+    background: white;
+    padding: 2rem;
+}
+
+main {
+    height: 500px;
+    background: red;
+    display: grid;
+    gap: 2rem;
+}
+
+.alpha {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.beta {
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.alpha-box {
+    background: yellow;
+}
+
+.beta-box {
+    background: purple;
+}
