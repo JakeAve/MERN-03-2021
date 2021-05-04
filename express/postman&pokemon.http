@@ -1,0 +1,20 @@
+# Bulbasaur
+GET https://pokeapi.co/api/v2/pokemon/1
+
+###
+# 2
+GET https://pokeapi.co/api/v2/pokemon/2
+
+###
+# 3
+GET https://pokeapi.co/api/v2/pokemon/3
+
+###
+# 4
+GET https://pokeapi.co/api/v2/pokemon/4
+
+###
+# 5
+GET https://pokeapi.co/api/v2/pokemon/5
+
+###

@@ -1,0 +1,43 @@
+
+### Mensajes de API
+GET http://localhost:8000/api
+
+
+### Usuarios
+GET http://localhost:8000/api/users
+
+
+### Nuevo Usuario
+POST http://localhost:8000/api/users
+content-type: application/json
+
+{
+    "firstName": "sample",
+    "lastName": "Wed, 21 Oct 2015 18:27:50 GMT"
+}
+
+### Nuevo Usuario Extraño
+POST http://localhost:8000/api/users
+content-type: application/json
+
+{
+    "nombre": "Juan",
+    "apellido": "Sifuentes"
+}
+
+### Usuario Específico
+GET http://localhost:8000/api/users/0/12
+
+
+### Cambiar Usuario Específico
+PUT http://localhost:8000/api/users/0
+content-type: application/json
+
+{
+    "firstName": "Coding",
+    "lastName": "Dojo"
+}
+
+
+### Eliminar Usuario Específico
+DELETE http://localhost:8000/api/users/0
