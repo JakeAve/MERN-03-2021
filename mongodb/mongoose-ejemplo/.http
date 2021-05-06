@@ -1,0 +1,10 @@
+### Crear user
+POST http://localhost:4000/api/user
+content-type: application/json
+
+{
+    "name": "Maria",
+    "dob": "01-01-21",
+    "correo": "otramaria@coding.cl",
+    "luckyNumber": 7
+}

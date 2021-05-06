@@ -9,3 +9,9 @@ POST http://localhost:5000/api/user/company
 
 ###
 GET http://localhost:5000/
+
+###
+GET http://localhost:5000/api/image
+
+###
+GET http://localhost:5000/hi
