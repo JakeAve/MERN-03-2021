@@ -1,0 +1,24 @@
+{
+  "name": "full-stack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:server": "nodemon --ignore client server/server.js --signal SIGTERM",
+    "dev:client": "cd \"client\" && yarn start",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.8"
+  },
+  "devDependencies": {
+    "concurrently": "^6.1.0",
+    "nodemon": "^2.0.7"
+  }
+}

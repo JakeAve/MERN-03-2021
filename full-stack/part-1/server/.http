@@ -1,0 +1,14 @@
+### Test
+
+GET http://localhost:5000/api
+
+### Post Product
+
+POST http://localhost:5000/api/product
+content-type: application/json
+
+{
+    "title": "Titulo",
+    "price": 5,
+    "description": "descripcion"
+}
