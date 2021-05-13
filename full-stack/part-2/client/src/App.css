@@ -1,0 +1,74 @@
+.new-product {
+    margin: 2rem auto;
+    display: grid;
+    max-width: 50%;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.new-product input,
+.new-product button {
+    font-size: 1.2rem;
+    padding: 0.5rem 0.75rem;
+}
+
+.new-product input {
+    margin-top: 0.5rem;
+}
+
+.new-product label {
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    border: 1px solid black;
+    padding: 0.75rem 1rem;
+}
+
+.lista-de-productos {
+    margin: 2rem auto;
+    display: grid;
+    max-width: 50%;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.lista-de-productos ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.lista-de-productos ul li {
+    text-align: center;
+}
+
+.product-section {
+    max-width: 50%;
+    margin: 3rem auto;
+    text-align: center;
+    display: grid;
+    gap: 1rem;
+}
+
+.delete-btn {
+    background-color: red;
+    color: white;
+    border: 2px solid red;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    padding: .5rem .75rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.delete-btn:hover, .delete-btn:focus {
+    background-color: white;
+    color: red;
+}
+
+.list-item {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
