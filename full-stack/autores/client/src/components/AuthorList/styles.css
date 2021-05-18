@@ -1,0 +1,8 @@
+.author-list tr {
+    border: 1px solid grey;
+}
+
+.author-list {
+    border-collapse: collapse;
+
+}

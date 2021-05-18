@@ -1,0 +1,38 @@
+### Create New User
+POST http://localhost:5000/api/user
+content-type: application/json
+
+{
+    "firstName": "Jake",
+    "lastName": "Avery",
+    "email": "javery@codingdojo.cl",
+    "password": "test1234"
+}
+
+### Login
+POST http://localhost:5000/api/login
+content-type: application/json
+
+{
+    "email": "javery@codingdojo.cl",
+    "password": "test1234"
+}
+
+### Create New Author
+POST http://localhost:5000/api/author
+content-type: application/json
+
+{
+    "name": "JRR Tolkein"
+}
+
+### Create New Author Without Name
+POST http://localhost:5000/api/author
+content-type: application/json
+
+{
+   
+}
+
+### Get Authors 
+GET http://localhost:5000/api/author

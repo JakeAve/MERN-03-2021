@@ -1,0 +1,21 @@
+.new-form {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+    /* grid-template-rows: 1fr 1fr; */
+}
+
+.new-form label,
+.new-form input,
+.new-form span {
+    grid-column: 1/ 3;
+}
+
+.success-msg {
+    display: none;
+}
+
+.success-msg.show {
+    display: block;
+}
