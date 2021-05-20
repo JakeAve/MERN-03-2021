@@ -1,5 +1,6 @@
 import React from 'react';
 import registerUser from '../../actions/registerUser';
+import './styles.css';
 
 const Register = () => {
     const onSubmit = async (e) => {
@@ -20,7 +21,7 @@ const Register = () => {
         }
     };
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className="register">
             <label>First Name </label>
             <input name="firstName" />
             <label>Last Name </label>

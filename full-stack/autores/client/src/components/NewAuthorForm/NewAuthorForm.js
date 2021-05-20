@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import './styles.css';
 import newAuthor from '../../actions/newAuthor';
+import { useUser } from '../../contexts/userContext';
 
 const showFieldError = (form, field, message) => {
     form.querySelector(`[data-${field}-error]`).innerHTML = message;
@@ -9,6 +10,7 @@ const showFieldError = (form, field, message) => {
 const NewAuthorForm = () => {
     const [nameValue, setNameValue] = useState('');
     const successRef = useRef(null);
+    const { user } = useUser();
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -20,7 +22,10 @@ const NewAuthorForm = () => {
                 `Author name needs to be at least 3 characters`,
             );
         }
-        const { success, data } = await newAuthor({ name: nameValue });
+        const { success, data } = await newAuthor({
+            name: nameValue,
+            id: user._id,
+        });
         if (!success && data.length) {
             // Mongoose error
             data.forEach(({ field, message }) => {
@@ -38,6 +43,7 @@ const NewAuthorForm = () => {
 
     return (
         <>
+            <h1>New Author Made by {user.firstName}</h1>
             <form className="new-form" onSubmit={onSubmit}>
                 <label htmlFor="name-1">Author Name</label>
                 <input

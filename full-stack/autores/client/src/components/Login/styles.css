@@ -1,0 +1,8 @@
+.login-form {
+    display: grid;
+    align-items: center;
+    align-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    border: 2px solid black;
+}

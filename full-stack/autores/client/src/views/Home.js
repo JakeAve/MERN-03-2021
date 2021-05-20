@@ -10,9 +10,9 @@ const Home = () => {
     const content = user ? (
         <AuthorList />
     ) : (
-        <>
+        <div className="register-login">
             <Register /> <Login />
-        </>
+        </div>
     );
 
     return (

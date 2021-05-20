@@ -18,12 +18,16 @@ content-type: application/json
     "password": "test1234"
 }
 
+### Logout
+POST http://localhost:5000/api/logout
+
 ### Create New Author
 POST http://localhost:5000/api/author
-content-type: application/json
+Content-Type: application/json
+# cookie: usertoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGEzMWU5NzE0YTdkODQzYzQ3OGYzNDYiLCJpYXQiOjE2MjE0NzM5NjV9.041Q751GVpaixlpg1XAG5r487DI09EXtilC3C8Ye1Dg; 
 
 {
-    "name": "JRR Tolkein"
+    "name": "JK Rowling"
 }
 
 ### Create New Author Without Name
