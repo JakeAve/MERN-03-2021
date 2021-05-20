@@ -1,8 +1,8 @@
 const getUser = async (id) => {
     try {
-        const res = await fetch(`http://localhost:5000/api/user/${id}`, {
+        const res = await fetch(`/api/user/${id}`, {
             method: 'GET',
-            credentials: 'include',
+            credentials: 'include'
         });
         if (!res.ok) throw new Error(res.text);
         const json = await res.json();

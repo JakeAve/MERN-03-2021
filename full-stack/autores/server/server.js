@@ -10,14 +10,7 @@ const app = express();
 require('./config/connectDB')();
 
 app.use(cookieParser());
-app.use(
-    cors({
-        origin: 'http://localhost:3000',
-        allowCrossDomain: true,
-        credentials: true,
-        allowedHeaders: ['Content-Type', 'Authorization']
-    }),
-);
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

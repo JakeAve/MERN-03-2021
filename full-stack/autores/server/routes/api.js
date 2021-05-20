@@ -5,10 +5,10 @@ const authenticate = require('../config/authenticate');
 const router = Router();
 
 router.post('/user', createUser);
-router.get('/user/:id', getUser);
+router.get('/user/:id', authenticate, getUser);
 router.post('/login', login);
 router.post('/logout', logout);
 router.get('/author', getAuthors);
-router.post('/author', createAuthor);
+router.post('/author', authenticate, createAuthor);
 
 module.exports = router;
