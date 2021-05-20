@@ -81,8 +81,8 @@ const logout = async (req, res) => {
 const getUser = async (req, res) => {
     try {
         const { id } = req.params;
-        const user = await UserModel.findById(id).exec();
-        res.json(user);
+        const {email, firstName, lastName, _id} = await UserModel.findById(id).exec();
+        res.json({email, firstName, lastName, _id});
     } catch (e) {
         console.error(e);
         return { success: false, data: e.message };
