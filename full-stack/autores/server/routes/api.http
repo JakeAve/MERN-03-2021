@@ -27,7 +27,8 @@ Content-Type: application/json
 # cookie: usertoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGEzMWU5NzE0YTdkODQzYzQ3OGYzNDYiLCJpYXQiOjE2MjE0NzM5NjV9.041Q751GVpaixlpg1XAG5r487DI09EXtilC3C8Ye1Dg; 
 
 {
-    "name": "JK Rowling"
+    "name": "Miguel de Cervantes",
+    "id": "60a5fb19cca8ffd36c2e7802"
 }
 
 ### Create New Author Without Name
@@ -40,3 +41,6 @@ content-type: application/json
 
 ### Get Authors 
 GET http://localhost:5000/api/author
+
+### Get Authors By User
+GET http://localhost:5000/api/authors-by-user/60a5fb19cca8ffd36c2e7802

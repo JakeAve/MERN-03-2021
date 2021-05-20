@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import './styles.css'
+import './styles.css';
 import getAuthors from '../../actions/getAuthors';
+import { useUser } from '../../contexts/userContext';
 
 const AuthorList = () => {
     const [authors, setAuthors] = useState([]);
+    const { user } = useUser();
 
     useEffect(() => {
-        getAuthors().then(({ data }) => setAuthors(data));
-    }, []);
+        getAuthors(user._id || null).then(({ data }) => setAuthors(data));
+    }, [user]);
 
     const List = () =>
         authors.map(({ _id, name }) => (

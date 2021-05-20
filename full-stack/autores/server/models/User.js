@@ -20,11 +20,11 @@ const UserSchema = new mongoose.Schema(
             required: [true, 'Password is required'],
             minlength: [8, 'Password must be 8 characters or longer'],
         },
-        authors: [AuthorSchema],
+        authors: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Author' }],
     },
     { timestamps: true },
 );
 
-const UserModel = mongoose.model('user', UserSchema);
+const UserModel = mongoose.model('User', UserSchema);
 
 module.exports = { UserSchema, UserModel };

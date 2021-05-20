@@ -8,6 +8,6 @@ const AuthorSchema = Schema({
     },
 });
 
-const Author = model('author', AuthorSchema);
+const Author = model('Author', AuthorSchema);
 
 module.exports = { AuthorSchema, Author };

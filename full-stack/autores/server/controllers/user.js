@@ -7,14 +7,20 @@ const createUser = async (req, res) => {
         const { firstName, lastName, email, password: _password } = req.body;
 
         const exists = await UserModel.findOne({ email }).exec();
-        console.log(exists);
+
         if (exists)
             return res.status(400).json({
                 errors: { error: { message: 'User Already Exists' } },
             });
 
         const password = await bcrypt.hash(_password, 10);
-        const user = UserModel({ firstName, lastName, email, password, authors: [] });
+        const user = UserModel({
+            firstName,
+            lastName,
+            email,
+            password,
+            authors: [],
+        });
         await user.save();
 
         const jwtToken = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
@@ -23,7 +29,7 @@ const createUser = async (req, res) => {
             .cookie('usertoken', jwtToken, process.env.JWT_SECRET, {
                 httpOnly: true,
             })
-            .json({ email: user.email, _id: user._id});
+            .json({ email: user.email, _id: user._id });
     } catch (err) {
         console.error(err);
         res.sendStatus(500);
@@ -65,7 +71,7 @@ const login = async (req, res) => {
 const logout = async (req, res) => {
     try {
         res.clearCookie('usertoken');
-        res.json({success: true});
+        res.json({ success: true });
     } catch (e) {
         console.error(e);
         return { success: false, data: e.message };
