@@ -10,20 +10,20 @@
 - [ ] Ir arriba al paso "6. Configure Security Group"
 - [ ] Cambiar "SSH TCP 22 My IP " (El IP se generará)
 - [ ] Añadir "HTTP TCP 80 Anywhere 0.0.0.0/0, ::/0"
-- [ ] Añadir "HTTPs TCP 443 Anywhere 0.0.0.0/0, ::/0"
+- [ ] Añadir "HTTPS TCP 443 Anywhere 0.0.0.0/0, ::/0"
 - [ ] Darle click abajo al "Review and Launch"
 - [ ] Seleccionar "Launch"
 - [ ] Seleccionar "Create a new key pair"
-- [ ] No importa lo que pongas para el nombre, pero el nombre para mi será "mern-1"
-- [ ] Seleccionar "Download Key Pair." Lo guardé en Desktop
+- [ ] No importa lo que pongas para el nombre, pero el nombre para mi key será "mern-1"
+- [ ] Seleccionar "Download Key Pair." Lo guardé en el directorio de Desktop
 - [ ] Seleccionar "Launch Instance"
 - [ ] Ir al tabla de instancias y darle check a tu instancia, debes ver "Actions" arriba
 - [ ] Seleccionar "Actions" "Connect"
 - [ ] Darle click al "SSH client"
-- [ ] Copiar el ùltimo ejemplo a un sticky note o notepad. Debe ser algo como `ssh -i "mern-1.pem" ubuntu@ec2-35-160-97-190.us-west-2.compute.amazonaws.com`. No cierres esta ventana hasta terminar todo.
+- [ ] Copiar el ùltimo ejemplo a un sticky note o notepad. Debe ser algo como `ssh -i "mern-1.cer" ubuntu@ec2-35-160-97-190.us-west-2.compute.amazonaws.com`. No cierres esta ventana hasta terminar todo el examen.
 - [ ] Abrir el terminal
 - [ ] Poner el comando `chmod 400 desktop/mern-1.cer`. Si tu key tiene otro nombre o path, tendràs que hacer `chmod 400 al/archivo/de/key`. También podría ser un archivo .pem.
-- [ ] `ssh -i "desktop/mern-1.cer" ubuntu@ec2-35-160-97-190.us-west-2.compute.amazonaws.com` debes poner el path al key tal como antes "desktop/mern-1.cer" y debes usar el "ubuntu@ec-bla-bla-bla" de tu instancia que ya copiaste
+- [ ] `ssh -i "desktop/mern-1.cer" ubuntu@ec-tu-instancia-x-x-x-x-x-x-x.amazonaws.com` debes poner el path al key tal como antes "desktop/mern-1.cer" y debes usar el "ubuntu@ec-bla-bla-bla" de tu instancia que ya copiaste
 - [ ] `yes`
 - [ ] Para salir, podrás usar el comando `exit`. A veces tienes que hacer `exit` dos veces. Para entrar de nuevo, el comando estará disponible con la flecha de arriba en tu teclado.
 
@@ -91,7 +91,8 @@ server {
 - [ ] Para guardar "control x", "y" y ENTER
 - [ ] `sudo nginx -t`
 - [ ] `sudo systemctl reload nginx`
-- [ ] Visitar tu página en el navegador. Puedes volver a AWS seleccionar "ECS Instance Connect", copiar el "Public IP address" y pegarlo como si fuera URL 35.160.97.190
+- [ ] Visitar tu página en el navegador. Puedes volver a AWS seleccionar "ECS Instance Connect", copiar el "Public IP address" y pegarlo como si fuera URL 35.160.97.190.
+- [ ] Debes ver que aparecen los archivos de client, pero el api no se ha iniciado.
 
 # PM2
 
