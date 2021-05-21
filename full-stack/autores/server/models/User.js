@@ -21,6 +21,7 @@ const UserSchema = new mongoose.Schema(
             minlength: [8, 'Password must be 8 characters or longer'],
         },
         authors: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Author' }],
+        primerasLetras: String
     },
     { timestamps: true },
 );
