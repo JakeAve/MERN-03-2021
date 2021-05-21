@@ -1,6 +1,8 @@
 
 # Deployment AWS
 
+## EC2
+
 - [ ] https://console.aws.amazon.com/?nc2=h_m_mc
 - [ ] Ir a "Launch a virtual machine"
 - [ ] Seleccionar a "Ubuntu Server 20.04 LTS (HVM), SSD Volume Type"
@@ -25,7 +27,7 @@
 - [ ] `yes`
 - [ ] Para salir, podrás usar el comando `exit`. A veces tienes que hacer `exit` dos veces. Para entrar de nuevo, el comando estará disponible con la flecha de arriba en tu teclado.
 
-# Instalación
+## Instalaciónes en el Servidor
 
 - [ ] Ejecutar los siguientes comandos
 ```
