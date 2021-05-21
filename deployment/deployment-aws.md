@@ -21,7 +21,7 @@
 - [ ] Seleccionar "Actions" "Connect"
 - [ ] Darle click al "SSH client"
 - [ ] Copiar el ùltimo ejemplo a un sticky note o notepad. Debe ser algo como `ssh -i "mern-1.cer" ubuntu@ec2-35-160-97-190.us-west-2.compute.amazonaws.com`. No cierres esta ventana hasta terminar todo el examen.
-- [ ] Abrir el terminal
+- [ ] Abrir el terminal. Recomiendo que uses zsh (Mac), bash o gitbash.
 - [ ] Poner el comando `chmod 400 desktop/mern-1.cer`. Si tu key tiene otro nombre o path, tendràs que hacer `chmod 400 al/archivo/de/key`. También podría ser un archivo .pem.
 - [ ] `ssh -i "desktop/mern-1.cer" ubuntu@ec-tu-instancia-x-x-x-x-x-x-x.amazonaws.com` debes poner el path al key tal como antes "desktop/mern-1.cer" y debes usar el "ubuntu@ec-bla-bla-bla" de tu instancia que ya copiaste
 - [ ] `yes`
@@ -55,6 +55,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.1/install.sh | bash
  - [ ] ENTER
 - [ ] `npm i`
 - [ ] Ir al directorio de client (usa `ls` para ver archivos que están allí y `pwd` para ver en dónde estás)
+- [ ] Si usaste yarn en react, haz `npm i yarn -g`
 - [ ] En el client haz `npm i` o `yarn` (depende en lo que usaste)
 - [ ] `npm run build` o `yarn build`
 - [ ] `cd ..` (ir al directorio del servidor)
@@ -69,12 +70,12 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.1/install.sh | bash
 server {
   listen 80 default_server;
   listen [::]:80 default_server;
-  server_name  voting-dojo;
-  root /home/ubuntu/voting-dojo-2.0/client/build;
+  server_name  <nombre-de-tu-proyecto>;
+  root /home/ubuntu/<nombre-del-directorio-de-tu-proyecto>/client/build;
   index index.html;
 
   location /api {
-    proxy_pass http://localhost:5000;
+    proxy_pass http://localhost:<el-port-de-api>;
     proxy_redirect off;
     proxy_http_version 1.1;
     proxy_set_header Upgrade $http_upgrade;
@@ -96,7 +97,7 @@ server {
 
 # PM2
 
-- [ ] `sudo npm i pm2 -g` Hay un cheatsheet [PM2 Cheatsheet](https://devhints.io/pm2)
+- [ ] `npm i pm2 -g` Hay un cheatsheet [PM2 Cheatsheet](https://devhints.io/pm2)
 - [ ] `pm2 start server.js --name <nombre-del-proyecto>`
 - [ ] `pm2 logs`
 - [ ] Visitar tu página en el navegador. Puedes volver a AWS seleccionar "ECS Instance Connect", copiar el "Public IP address" y pegarlo como si fuera URL 35.160.97.190
