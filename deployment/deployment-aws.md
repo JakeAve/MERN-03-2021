@@ -26,7 +26,7 @@
 -   [ ] `yes`
 -   [ ] Para salir, podrás usar el comando `exit`. A veces tienes que hacer `exit` dos veces. Para entrar de nuevo, el comando estará disponible con la flecha de arriba en tu teclado.
 
-## Instalaciónes en el Servidor
+## Instalaciones en el Servidor
 
 -   [ ] Ejecutar los siguientes comandos
 
