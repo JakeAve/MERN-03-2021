@@ -76,9 +76,10 @@ Para guardar el archivo:
 npm i yarn -g
 ```
 
+-   [ ] Entrar en el directorio del client `cd client`
 -   [ ] En el client haz `npm i` o `yarn` (depende en lo que usaste)
 -   [ ] `npm run build` o `yarn build`
--   [ ] `cd ..` (ir al directorio del servidor)
+-   [ ] Ir al directorio del servidor `cd ..`
 -   [ ] Hacer `npm run start` o `node server.js`. Sólo para ver que el servidor funciona. Si está bien, "control c"
 
 # NGINX
