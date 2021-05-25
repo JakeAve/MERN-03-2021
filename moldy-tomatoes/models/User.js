@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const UserSchema = mongoose.Schema({
-    firstName: String,
+    firstName: { type: String, required: [true, 'First name is required'] },
     reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Review' }],
 });
 
