@@ -1,4 +1,4 @@
-# Nerd World
+# MERN Project
 
 A basic boiler plate of a full-stack MERN project
 
