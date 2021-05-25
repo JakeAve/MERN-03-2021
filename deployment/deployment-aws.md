@@ -21,10 +21,12 @@
 -   [ ] Darle click al "SSH client"
 -   [ ] Copiar el ùltimo ejemplo a un sticky note o notepad. Debe ser algo como `ssh -i "mern-1.cer" ubuntu@ec2-35-160-97-190.us-west-2.compute.amazonaws.com`. No cierres esta ventana hasta terminar todo el examen.
 -   [ ] Abrir el terminal. Recomiendo que uses zsh (Mac), bash o gitbash.
--   [ ] Poner el comando `chmod 400 desktop/mern-1.cer`. Si tu key tiene otro nombre o path, tendràs que hacer `chmod 400 al/archivo/de/key`. También podría ser un archivo .pem.
--   [ ] `ssh -i "desktop/mern-1.cer" ubuntu@ec-tu-instancia-x-x-x-x-x-x-x.amazonaws.com` debes poner el path al key tal como antes "desktop/mern-1.cer" y debes usar el "ubuntu@ec-bla-bla-bla" de tu instancia que ya copiaste
+-   [ ] `ssh -i "desktop/mern-1.cer" ubuntu@ec-tu-instancia-x-x-x-x-x-x-x.amazonaws.com` debes poner el path al key tal como antes "desktop/mern-1.cer" y debes usar el "ubuntu@ec-bla-bla-bla" de tu instancia que ya copiaste. Si ves algo de WARNING UNPROTECTED PRIVATE KEY FILE, ve abajo antes de seguir.
 -   [ ] `yes`
 -   [ ] Para salir, podrás usar el comando `exit`. A veces tienes que hacer `exit` dos veces. Para entrar de nuevo, el comando estará disponible con la flecha de arriba en tu teclado.
+
+### WARNING UNPROTECTED PRIVATE KEY FILE
+- [ ] Si estás en Mac y tienes problemas de permiso, debes poner el comando `chmod 400 desktop/mern-1.cer`. Si tu key tiene otro nombre o path, tendràs que hacer `chmod 400 al/archivo/de/key`. También podría ser un archivo .pem.
 
 ## Instalaciones en el Servidor
 
