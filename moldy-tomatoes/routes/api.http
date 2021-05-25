@@ -1,0 +1,40 @@
+# Add entry
+POST http://localhost:5000/api/user
+Content-Type: application/json
+
+{
+    "firstName": "Pedro"
+}
+
+### 
+
+# Get Entries
+GET https://localhost:5000/api/info
+
+### Add Movie
+POST http://localhost:5000/api/movie
+Content-Type: application/json
+
+{
+    "title": "El Rey León"
+}
+
+### Add Review
+POST http://localhost:5000/api/review
+Content-Type: application/json
+
+{
+    "content": "Ahora no me gusta.",
+    "rating": 1,
+    "createdBy": "60ac3d24eb7df37c3914d76e",
+    "movieId": "60ac3d81eb7df37c3914d770"
+}
+
+### Get All Movies
+
+GET http://localhost:5000/api/movie
+
+
+### Get Movie Reviews
+
+GET http://localhost:5000/api/review/60ac3d81eb7df37c3914d770
