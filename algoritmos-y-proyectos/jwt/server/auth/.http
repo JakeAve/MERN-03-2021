@@ -1,0 +1,27 @@
+### Register
+
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+    "firstName": "First",
+    "lastName": "Last",
+    "email": "coo",
+    "password": "password",
+    "confirmPassword": "password2"
+
+}
+
+### Login
+
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+    "firstName": "First",
+    "lastName": "Last",
+    "email": "coo",
+    "password": "password",
+    "confirmPassword": "password2"
+
+}
