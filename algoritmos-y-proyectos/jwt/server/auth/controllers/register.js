@@ -1,5 +1,5 @@
 const { UserModel } = require('../../models/User');
-const bcrypt = require('bcrypt');
+const { createToken } = require('../../jwt');
 
 module.exports = async (req, res) => {
     try {
@@ -11,15 +11,7 @@ module.exports = async (req, res) => {
         if (exists)
             return res.status(409).json({ message: 'User already exists' });
 
-        // const user = new UserModel({
-        //     firstName,
-        //     lastName,
-        //     email,
-        //     password,
-        //     confirmPassword,
-        // });
-
-        await UserModel.create({
+        const user = await UserModel.create({
             firstName,
             lastName,
             email,
@@ -27,7 +19,13 @@ module.exports = async (req, res) => {
             confirmPassword,
         });
 
-        // await user.save();
+        const accessToken = createToken(user);
+
+        console.log({ accessToken });
+
+        res.cookie('access-token', accessToken, process.env.JWT_SECRET, {
+            httpOnly: true,
+        });
 
         res.status(201).json({ email });
     } catch (err) {

@@ -5,11 +5,15 @@ import Login from './views/Login';
 import Home from './views/Home';
 import { UserProvider } from './contexts/user';
 import { AlertProvider } from './contexts/alerts';
+import Logout from './components/Logout';
 
 function App() {
     return (
         <UserProvider>
             <AlertProvider>
+                <nav>
+                    <Logout />
+                </nav>
                 <Router>
                     <Switch>
                         <Route path="/register" component={Register} />

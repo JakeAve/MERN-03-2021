@@ -15,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.use("/api", require("./routes/api"));
 
 app.use('/auth', require('./auth/router'));
+app.use('/api', require('./api/router'));
 
 const port = process.env.PORT || 5000;
 

@@ -1,29 +1,31 @@
+const { createToken } = require('../../jwt');
 const { UserModel } = require('../../models/User');
+const bcrypt = require('bcrypt');
 
-module.exports = async (req, res) => {
+const fourHundred = (res) =>
+    res.status(400).json({ message: 'Invalid Credentials' });
+
+const login = async (req, res) => {
     try {
         const { email, password } = req.body;
 
         const user = await UserModel.findOne({ email });
 
-        if (user === null) return res.sendStatus(400);
+        if (user === null) return fourHundred(res);
 
         const correctPassword = await bcrypt.compare(password, user.password);
 
-        if (!correctPassword) return res.sendStatus(400);
+        if (!correctPassword) return fourHundred(res);
 
-        const userToken = jwt.sign(
-            {
-                id: user._id,
-            },
-            process.env.JWT_SECRET,
-        );
+        const accessToken = createToken(user);
 
-        res.cookie('usertoken', userToken, secret, {
+        res.cookie('access-token', accessToken, process.env.JWT_SECRET, {
             httpOnly: true,
-        }).json({ msg: 'success!' });
+        }).json({ _id: user._id });
     } catch (err) {
         console.error(err);
         res.sendStatus(500);
     }
 };
+
+module.exports = login;

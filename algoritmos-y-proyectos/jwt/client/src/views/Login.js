@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -15,6 +15,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useAlert } from '../contexts/alerts';
 import { useHistory } from 'react-router';
 import loginUser from '../actions/loginUser';
+import getUserInfo from '../actions/getUserInfo';
+import { useUser } from '../contexts/user';
 
 function Copyright() {
     return (
@@ -62,16 +64,11 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const noErrors = {
-    email: '',
-    password: '',
-};
-
 export default function SignInSide() {
     const classes = useStyles();
-    const [, setFormErrors] = useState(noErrors);
     const alert = useAlert();
     const history = useHistory();
+    const { setUser } = useUser();
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -81,16 +78,17 @@ export default function SignInSide() {
         for (const [field, value] of formData) payload[field] = value;
         const { success, data } = await loginUser(payload);
         if (success) {
-            alert('success', 'Welcome', 3000);
-            history.push('/');
-        } else if (!success && data.errors) {
-            alert('error', 'Login failed', 3000);
-            setFormErrors(noErrors);
-            const temp = { ...noErrors };
-            Object.entries(data.errors).forEach(([field, obj]) => {
-                temp[field] = obj.message;
-            });
-            setFormErrors(temp);
+            const { success: userSuccess, data: userData } = await getUserInfo(
+                data._id,
+            );
+            if (userSuccess) {
+                console.log({ userData });
+                setUser(userData);
+                alert('success', 'Welcome', 3000);
+                history.push('/');
+            } else alert('error', 'Login failed');
+        } else {
+            alert('error', 'Login failed');
         }
     };
 

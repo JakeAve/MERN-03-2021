@@ -6,9 +6,9 @@ Content-Type: application/json
 {
     "firstName": "First",
     "lastName": "Last",
-    "email": "coo",
+    "email": "coo2@gmail.com",
     "password": "password",
-    "confirmPassword": "password2"
+    "confirmPassword": "password"
 
 }
 
@@ -18,10 +18,12 @@ POST http://localhost:5000/auth/login
 Content-Type: application/json
 
 {
-    "firstName": "First",
-    "lastName": "Last",
-    "email": "coo",
-    "password": "password",
-    "confirmPassword": "password2"
-
+    "email": "coo2@gmail.com",
+    "password": "password"
 }
+
+### Logout
+
+POST http://localhost:5000/auth/logout
+
+

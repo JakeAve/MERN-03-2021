@@ -23,6 +23,7 @@ const registerUser = async (data) => {
     } catch (err) {
         console.error(err);
         window.alert('An unexpected error has occured');
+        return { success: false, data: { message: 'Unexpected Error' } };
     }
 };
 
