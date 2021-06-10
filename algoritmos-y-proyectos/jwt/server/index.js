@@ -8,7 +8,8 @@ const app = express();
 require('./db/connect')();
 
 app.use(cookieParser());
-if (process.env.NODE_ENV !== 'production') app.use(cors());
+if (process.env.NODE_ENV !== 'production')
+    app.use(cors({ credentials: true, origin: ['http://localhost:3000'] }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

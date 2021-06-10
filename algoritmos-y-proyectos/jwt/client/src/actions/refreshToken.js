@@ -1,9 +1,9 @@
-const getUserInfo = async (token) => {
+const refreshToken = async () => {
     try {
-        const response = await fetch(`/api/user`, {
+        const response = await fetch('/auth/refresh', {
             method: 'GET',
             headers: {
-                authorization: `Bearer ${token}`,
+                'Content-Type': 'application/json',
             },
         });
 
@@ -16,4 +16,4 @@ const getUserInfo = async (token) => {
     }
 };
 
-export default getUserInfo;
+export default refreshToken;

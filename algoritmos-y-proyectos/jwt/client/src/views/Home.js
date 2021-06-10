@@ -3,16 +3,18 @@ import { Redirect } from 'react-router-dom';
 import { useUser } from '../contexts/user';
 
 const Home = () => {
-    const { user } = useUser();
+    const { user, accessToken } = useUser();
     const [message, setMessage] = useState('');
 
     useEffect(() => {
-        fetch('/api/info')
+        fetch('/api/info', {
+            headers: { authorization: `Bearer ${accessToken}` },
+        })
             .then((res) => res.json())
             .then(({ info }) =>
                 setMessage(`The secret information is: ${info}`),
             );
-    }, []);
+    }, [accessToken]);
 
     if (user)
         return (

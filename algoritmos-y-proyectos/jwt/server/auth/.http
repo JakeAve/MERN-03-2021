@@ -22,8 +22,11 @@ Content-Type: application/json
     "password": "password"
 }
 
+### Refresh
+
+GET http://localhost:5000/auth/refresh
+
 ### Logout
 
 POST http://localhost:5000/auth/logout
-
 

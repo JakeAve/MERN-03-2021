@@ -1,5 +1,5 @@
 const { UserModel } = require('../../models/User');
-const { createToken } = require('../../jwt');
+const { createToken, createRefreshToken, createTokens } = require('../../jwt');
 
 module.exports = async (req, res) => {
     try {
@@ -19,15 +19,9 @@ module.exports = async (req, res) => {
             confirmPassword,
         });
 
-        const accessToken = createToken(user);
+        const { accessToken } = createTokens(user, req, res);
 
-        console.log({ accessToken });
-
-        res.cookie('access-token', accessToken, process.env.JWT_SECRET, {
-            httpOnly: true,
-        });
-
-        res.status(201).json({ email });
+        res.status(201).json({ accessToken });
     } catch (err) {
         console.error(err);
         console.log(req.body);

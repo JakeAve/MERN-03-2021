@@ -1,3 +1,8 @@
 ### Get User
 
 GET http://localhost:5000/api/user/60bebc4971e7dd0d9efaa1ac
+
+###
+
+GET http://localhost:5000/api/info
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNvbzJAZ21haWwuY29tIiwiaWQiOiI2MGJlYmM0OTcxZTdkZDBkOWVmYWExYWMiLCJpYXQiOjE2MjMyODQyMzksImV4cCI6MTYyMzI4NzgzOX0.WMMzrB2xGkLr6-bJN_gQQ64SdeW9_myFcZet8osjwAU

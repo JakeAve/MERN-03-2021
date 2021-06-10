@@ -1,5 +1,7 @@
+const { refreshTokenCookieName } = require('../../jwt');
+
 const logout = (req, res) => {
-    res.clearCookie('access-token');
+    res.clearCookie(refreshTokenCookieName);
     res.json({ message: 'OK' });
 };
 

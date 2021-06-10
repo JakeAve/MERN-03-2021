@@ -1,33 +1,42 @@
 import getUserInfo from '../actions/getUserInfo';
+import refreshToken from '../actions/refreshToken';
+import { useHistory } from 'react-router';
 
 const { useContext, createContext, useState, useEffect } = require('react');
-
-const userIdFromLocalStorage = localStorage.getItem('userId');
 
 const UserContext = createContext(null);
 
 export const UserProvider = (props) => {
     const { children } = props;
-    const [user, setUser] = useState(
-        userIdFromLocalStorage ? { _id: userIdFromLocalStorage } : null,
-    );
+    const [user, setUser] = useState();
+    const [accessToken, setAccessToken] = useState(null);
 
-    const _getUserInfo = async () => {
-        const { success, data } = await getUserInfo(userIdFromLocalStorage);
-        if (success) setUser(data);
+    const history = useHistory();
+
+    const initialLoad = async () => {
+        const { success, data } = await refreshToken();
+        if (success && data.accessToken) setAccessToken(data.accessToken);
+        const { success: userSuccess, data: userData } = await getUserInfo(
+            data.accessToken,
+        );
+        if (userSuccess) setUser(userData);
     };
 
-    if (!user && userIdFromLocalStorage) {
-        _getUserInfo();
-    }
+    useEffect(() => {
+        initialLoad();
+    }, []);
 
     useEffect(() => {
-        if (user) localStorage.setItem('userId', user._id);
-        else localStorage.removeItem('userId');
+        setUser(user);
+        if (user) {
+            history.push('/');
+        }
     }, [user]);
 
     return (
-        <UserContext.Provider value={{ user, setUser }}>
+        <UserContext.Provider
+            value={{ user, setUser, setAccessToken, accessToken }}
+        >
             {children}
         </UserContext.Provider>
     );

@@ -8,8 +8,6 @@ const registerUser = async (data) => {
             },
         });
 
-        console.log({ status: response.status });
-
         const result = await response.json();
         if (response.ok) return { success: true, data: result };
         else if (response.status === 409)

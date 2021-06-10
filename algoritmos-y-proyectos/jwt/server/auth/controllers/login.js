@@ -1,6 +1,7 @@
-const { createToken } = require('../../jwt');
+const { createTokens, refreshTokenCookieName } = require('../../jwt');
 const { UserModel } = require('../../models/User');
 const bcrypt = require('bcrypt');
+const refresh = require('./refresh');
 
 const fourHundred = (res) =>
     res.status(400).json({ message: 'Invalid Credentials' });
@@ -17,11 +18,13 @@ const login = async (req, res) => {
 
         if (!correctPassword) return fourHundred(res);
 
-        const accessToken = createToken(user);
+        const { accessToken, refreshToken } = createTokens(user, req, res);
 
-        res.cookie('access-token', accessToken, process.env.JWT_SECRET, {
+        res.cookie(refreshTokenCookieName, refreshToken, {
             httpOnly: true,
-        }).json({ _id: user._id });
+        });
+
+        res.json({ accessToken });
     } catch (err) {
         console.error(err);
         res.sendStatus(500);

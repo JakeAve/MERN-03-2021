@@ -9,20 +9,20 @@ import Logout from './components/Logout';
 
 function App() {
     return (
-        <UserProvider>
-            <AlertProvider>
-                <nav>
-                    <Logout />
-                </nav>
-                <Router>
+        <Router>
+            <UserProvider>
+                <AlertProvider>
+                    <nav>
+                        <Logout />
+                    </nav>
                     <Switch>
                         <Route path="/register" component={Register} />
                         <Route path="/login" component={Login} />
                         <Route path="/" component={Home} />
                     </Switch>
-                </Router>
-            </AlertProvider>
-        </UserProvider>
+                </AlertProvider>
+            </UserProvider>
+        </Router>
     );
 }
 

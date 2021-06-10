@@ -68,7 +68,7 @@ export default function SignInSide() {
     const classes = useStyles();
     const alert = useAlert();
     const history = useHistory();
-    const { setUser } = useUser();
+    const { setUser, setAccessToken } = useUser();
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -78,11 +78,11 @@ export default function SignInSide() {
         for (const [field, value] of formData) payload[field] = value;
         const { success, data } = await loginUser(payload);
         if (success) {
+            setAccessToken(data.accessToken);
             const { success: userSuccess, data: userData } = await getUserInfo(
-                data._id,
+                data.accessToken,
             );
             if (userSuccess) {
-                console.log({ userData });
                 setUser(userData);
                 alert('success', 'Welcome', 3000);
                 history.push('/');
