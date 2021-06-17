@@ -13,7 +13,7 @@ export const UserProvider = (props) => {
 
     const history = useHistory();
 
-    const initialLoad = async () => {
+    const renewToken = async () => {
         const { success, data } = await refreshToken();
         if (success && data.accessToken) setAccessToken(data.accessToken);
         const { success: userSuccess, data: userData } = await getUserInfo(
@@ -23,7 +23,10 @@ export const UserProvider = (props) => {
     };
 
     useEffect(() => {
-        initialLoad();
+        renewToken();
+        setInterval(() => {
+            renewToken();
+        }, 14 * 60 * 1000);
     }, []);
 
     useEffect(() => {

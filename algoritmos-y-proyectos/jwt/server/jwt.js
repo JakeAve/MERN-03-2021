@@ -50,7 +50,7 @@ const createAccessToken = (user) => {
             { email: user.email, id: user._id },
             accessTokenSecret,
             {
-                expiresIn: '1hr',
+                expiresIn: '15m',
             },
         );
 
@@ -70,20 +70,6 @@ const createRefreshToken = (user) => {
     );
     return refreshToken;
 };
-
-// const refreshToken = async (req, res) => {
-//     const
-
-//     if (!token)
-//         return res.status(401).json({ message: 'User not Authenticated!' });
-
-//         const {refreshToken} = createTokens()
-
-//     } catch (err) {
-//         console.error(err);
-//         return res.status(403).json({ message: 'Forbidden' });
-//     }
-// }
 
 const validateToken = async (req, res, next) => {
     const authHeader = req.headers['authorization'];
